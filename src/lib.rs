@@ -9,7 +9,7 @@ mod logger;
 
 /// Get the writer to be used with tracing_subscriber
 /// ```
-/// use rustwatchman::Watchman;
+/// use rust_watchman::Watchman;
 /// 
 /// #[tokio::main]
 /// async fn main() {
