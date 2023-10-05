@@ -20,4 +20,14 @@ jobs:
       - run: rustup update ${{ matrix.toolchain }} && rustup default ${{ matrix.toolchain }}
       - run: cargo build --verbose
       - run: cargo test --verbose
-  
+      - name: Create Release Binary
+        run: cargo build --release
+      - name: Create Release Archive
+        run: tar -czf rust-watchman-${{ matrix.toolchain }}.tar.gz target/release/rust-watchman
+      - name: Upload Release Archive
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: rust-watchman-${{ matrix.toolchain }}.tar.gz
+          asset_name: rust-watchman-${{ matrix.toolchain }}.tar.gz
+          asset_content_type: application/gzip
