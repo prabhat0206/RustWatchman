@@ -20,7 +20,7 @@ rust_watchman = { git = "https://github.com/prabhat0206/RustWatchman.git" }
 Then, in your Rust code, import the TracingCWLogger struct from the rust_watchman crate:
     
 ```rust
-use rust_watchman::TracingCWLogger;
+use rust_watchman::Watchman;
 ```
 You can then create a new instance of the TracingCWLogger struct and use it to write logs to CloudWatch:
     
