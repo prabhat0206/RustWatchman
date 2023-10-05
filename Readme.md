@@ -17,12 +17,12 @@ To use RustWatchman in your Rust project, add the follohttps://docs.rs/tracing/l
 [dependencies]
 rust_watchman = { git = "https://github.com/prabhat0206/RustWatchman.git" }
 ```
-Then, in your Rust code, import the TracingCWLogger struct from the rust_watchman crate:
+Then, in your Rust code, import the Watchman struct from the rust_watchman crate:
     
 ```rust
 use rust_watchman::Watchman;
 ```
-You can then create a new instance of the TracingCWLogger struct and use it to write logs to CloudWatch:
+You can then create a new instance of the Watchman struct and use it to write logs to CloudWatch:
     
 ```rust
 #[tokio::main]
